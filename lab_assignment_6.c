@@ -2,8 +2,23 @@
 
 int search(int numbers[], int low, int high, int value) 
 {
-	return -1;
-}
+if (low > high) {
+		// Base case: value is not found
+		return -1;
+	}
+
+	int mid = low + (high - low) / 2;  // Calculate the middle index
+
+	if (numbers[mid] == value) {
+		// Base case: value is found at the middle index
+		return mid;
+	} else if (numbers[mid] > value) {
+		// Recursive case: value is in the left half of the array
+		return search(numbers, low, mid - 1, value);
+	} else {
+		// Recursive case: value is in the right half of the array
+		return search(numbers, mid + 1, high, value);
+	}}
 
 void printArray(int numbers[], int sz)
 {
