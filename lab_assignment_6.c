@@ -18,7 +18,8 @@ if (low > high) {
 	} else {
 		// Recursive case: value is in the right half of the array
 		return search(numbers, mid + 1, high, value);
-	}}
+	}
+}
 
 void printArray(int numbers[], int sz)
 {
